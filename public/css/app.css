@@ -1,0 +1,65 @@
+:root {
+    --shoe-primary: #1a1a2e;
+    --shoe-accent: #ff6b35;
+    --shoe-accent-2: #2dd4bf;
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f7fb; }
+
+.shoe-navbar { background: var(--shoe-primary); }
+.shoe-footer { background: var(--shoe-primary); }
+.footer-link { color: #cfcfe0; text-decoration: none; }
+.footer-link:hover { color: var(--shoe-accent); }
+
+.hero-section {
+    background: linear-gradient(135deg, var(--shoe-primary), #16213e);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.product-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+    background: #fff;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 30px rgba(0,0,0,.12); }
+.product-card img { height: 220px; object-fit: cover; width: 100%; }
+
+.badge-activity { background: var(--shoe-accent-2); }
+.price-tag { color: var(--shoe-accent); font-weight: 700; font-size: 1.2rem; }
+
+.btn-shoe-primary {
+    background: var(--shoe-accent);
+    border: none;
+    color: #fff;
+    transition: all .2s;
+}
+.btn-shoe-primary:hover { background: #e8551f; color: #fff; transform: scale(1.03); }
+
+.wishlist-icon { cursor: pointer; transition: color .2s; }
+.wishlist-icon.active { color: #e74c3c; }
+
+.fade-in { animation: fadeIn .5s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Cart badge bounce on add */
+@keyframes bounceBadge {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.6); }
+    70%  { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+.bounce-badge { animation: bounceBadge 0.6s ease; }
+
+.recommend-form-card {
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff, #f1f1fb);
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+}
+
+.loader-overlay {
+    position: fixed; inset: 0; background: rgba(255,255,255,.7);
+    display: flex; align-items: center; justify-content: center; z-index: 9999;
+}
