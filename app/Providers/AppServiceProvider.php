@@ -8,5 +8,8 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void {}
 
-    public function boot(): void {}
+    public function boot(): void {
+              if (config('app.env') === 'production') {
+        \Illuminate\Support\Facades\URL::forceScheme('https');
+}
 }
